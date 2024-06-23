@@ -1,0 +1,25 @@
+[Desktop Entry]
+
+# The type as listed above
+Type=Application
+
+# The version of the desktop entry specification to which this file complies
+Version=1.0
+
+# The name of the application
+Name=bsnes-plus-nwa
+
+# A comment which can/will be used as a tooltip
+Comment=Fork of Bsnes-plus implementing the Emulator Network Access protocol
+
+# The executable of the application, possibly with arguments.
+Exec=bsnes-plus-nwa
+
+# The name of the icon that will be used to display this entry
+Icon=fr.nyo.bsnes-plus-nwa
+
+# Describes whether this application needs to be run in a terminal or not
+Terminal=false
+
+# Describes the categories in which this entry should be shown
+Categories=Game;Emulator;

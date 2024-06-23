@@ -9,10 +9,10 @@ endif
 ifeq ($(profile),)
   profile := compatibility
   ifeq ($(out),)
-    out   := bsnes
+    out   := bsnes-plus-nwa
   endif
 else ifeq ($(out),)
-  out     := bsnes-$(profile)
+  out     := bsnes-plus-nwa$(profile)
 endif
 
 objdir := obj/$(profile)

@@ -1,0 +1,14 @@
+Source: bsnes-plus-nwa
+Maintainer: Sylvain Colinet <scolinet@gmail.com>
+Section: misc
+Priority: optional
+Standards-Version: 3.9.2
+Build-Depends: debhelper (>= 9), qt6-base-dev, 
+
+Package: bsnes-plus-nwa
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Fork of Bsnes-plus implementing the Emulator Network Access protocol
+ Bnes-plus is a SNES emulator more focused on debugging. This fork implement th
+ e NWA protocol 
+

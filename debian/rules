@@ -1,0 +1,25 @@
+#!/usr/bin/make -f
+%:
+	dh $@
+
+override_dh_auto_configure:
+	
+
+override_dh_auto_build:
+	cd bsnes && make
+
+override_dh_auto_test:
+	
+
+override_dh_auto_install:
+	install -v -D bsnes/out/bsnes-plus-nwa $$(pwd)/debian/bsnes-plus-nwa/usr/bin/bsnes-plus-nwa
+	install -v -D snesreader/libsnesreader.so $$(pwd)/debian/bsnes-plus-nwa/usr/lib/libsnesreader.so
+	install -v -D snesfilter/libsnesfilter.so $$(pwd)/debian/bsnes-plus-nwa/usr/lib/libsnesfilter.so
+	install -v -D snesmusic/libsnesmusic.so $$(pwd)/debian/bsnes-plus-nwa/usr/lib/libsnesmusic.so
+	install -v -D supergameboy/libsupergameboy.so $$(pwd)/debian/bsnes-plus-nwa/usr/lib/libsupergameboy.so
+	install -v -d $$(pwd)/debian/bsnes-plus-nwa/usr/share/applications/
+	install -v -Dm644 bsnes-plus-nwa.desktop $$(pwd)/debian/bsnes-plus-nwa/usr/share/applications/fr.nyo.bsnes-plus-nwa.desktop
+	install -v -Dm644 "bsnes/data/bsnes.png" $$(pwd)/debian/bsnes-plus-nwa/usr/share/icons/hicolor/48x48/apps/fr.nyo.bsnes-plus-nwa.png
+	install -v -Dm644 README.md $$(pwd)/debian/bsnes-plus-nwa/usr/share/doc/bsnes-plus-nwa/README.md
+	install -v -d $$(pwd)/debian/bsnes-plus-nwa/usr/share/man/man1/
+	gzip -c "bsnes-plus-nwa.manpage.1" > $$(pwd)/debian/bsnes-plus-nwa/usr/share/man/man1/bsnes-plus-nwa.1.gz
